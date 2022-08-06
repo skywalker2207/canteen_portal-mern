@@ -2,78 +2,58 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const UserSchema = new Schema(
-  {
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-      minlength: 5,
+const UserSchema = new Schema({
+	Name: {
+		type: String,
+        required: false
+    },
+	Email: {
+		type: String,
+        required: false
+    },
+	date:{
+		type: Date,
+        required: false
+    },
+    Password: { 
+        type: String, 
+        required: false
+    }, 
+    ContactNo: { 
+        type: Number, 
+        required: false
+    }, 
+
+    userStatus: {
+        type: String,
+        required: false
     },
 
-    password: {
-      type: String,
-      required: true,
+    Age: { 
+        type: Number,
+        required: false
+    },
+	BatchName: { 
+		type: String,
+        required: false
     },
 
-    phone: {
-      type: String,
-      unique: true,
-      required: true,
+	ShopName: { 
+		type: String,
+        required: false
     },
-
-    firstName: {
-      type: String,
-      required: true,
-      trim: true,
+	OpeningTime: { 
+		type: Date, 
+        required: false
     },
-
-    lastName: {
-      type: String,
-      trim: true,
+	ClosingTime: { 
+		type: Date, 
+        required: false
     },
-
-    date: {
-      type: Date,
-      required: false,
-    },
-
-    type: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-
-    batch: {
-      type: String,
-      required: false,
-    },
-
-    age: {
-      type: Number,
-      required: false,
-    },
-
-    shopName: {
-      type: String,
-      required: false,
-    },
-
-    open: {
-      type: String,
-      required: false,
-    },
-
-    close: {
-      type: String,
-      required: false,
-    },
-  },
-
-  {
-    collection: "users",
-  }
-);
+    Wallet: { 
+        type: Number, 
+        required: false
+    }
+});
 
 module.exports = User = mongoose.model("Users", UserSchema);
